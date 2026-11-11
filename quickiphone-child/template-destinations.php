@@ -15,6 +15,7 @@ $popular = array( 'Japan', 'United States', 'Türkiye', 'Saudi Arabia', 'UAE', '
 $q = isset( $_GET['q'] ) ? sanitize_text_field( wp_unslash( $_GET['q'] ) ) : '';
 $data['popular'] = $popular;
 $data['cart']    = home_url( '/cart/' );
+$data['ids']     = get_option( 'qi_product_map', array() );
 $data['start']   = $q;
 ?>
 <div class="qi-wrap qi-dest-top">

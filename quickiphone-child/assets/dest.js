@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var d = el('div', 'days'); d.appendChild(el('strong', '', String(p[2]))); d.appendChild(el('span', '', 'Days')); c.appendChild(d);
       c.appendChild(el('small', 'lbl', 'One-time price'));
       c.appendChild(el('b', 'price', '$' + cur.prices[i].toFixed(2)));
-      var a = el('a', 'qi-btn', 'Buy now'); a.href = D.cart; c.appendChild(a);
+      var a = el('a', 'qi-btn', 'Buy now');
+      var pid = (D.ids || {})[(mode === 'regions' ? 'r' : 'c') + '|' + cur.name + '|' + i];
+      a.href = pid ? D.cart + '?add-to-cart=' + pid : D.cart; c.appendChild(a);
       g.appendChild(c);
     });
   }

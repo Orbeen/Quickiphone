@@ -10,6 +10,7 @@ $plans = array(
 	array( 'GL', 'Global', 'One eSIM across 50+ supported countries', 'Multiple premium partner networks', 'qc-global', array( array( 'Voyager', '5 GB', '$39.90', '60 min', '60 SMS' ), array( 'Complete', '10 GB', '$59.90', '120 min', '120 SMS' ) ) ),
 );
 $cart = home_url( '/cart/' );
+$ids  = get_option( 'qi_product_map', array() );
 ?>
 <section class="qc-hero">
 	<div class="qi-wrap qc-hero-in">
@@ -50,7 +51,8 @@ $cart = home_url( '/cart/' );
 						<div class="row"><small><?php echo esc_html( $pl[0] ); ?></small><small>From</small></div>
 						<div class="row"><b class="gb"><?php echo esc_html( $pl[1] ); ?></b><b class="price"><?php echo esc_html( $pl[2] ); ?></b></div>
 						<div class="row det"><span><?php echo esc_html( $pl[3] ); ?></span><span><?php echo esc_html( $pl[4] ); ?></span><span>30 days</span></div>
-						<a class="qi-btn qi-btn--yellow" href="<?php echo esc_url( $cart ); ?>">Buy now &rarr;</a>
+						<?php $pid = isset( $ids[ 'qc|' . $p[0] . '|' . $pl[0] ] ) ? (int) $ids[ 'qc|' . $p[0] . '|' . $pl[0] ] : 0; ?>
+						<a class="qi-btn qi-btn--yellow" href="<?php echo esc_url( $pid ? add_query_arg( 'add-to-cart', $pid, $cart ) : $cart ); ?>">Buy now &rarr;</a>
 					</div>
 					<?php endforeach; ?>
 					<p class="foot">Mobile number included<br><small><?php echo esc_html( $p[3] ); ?></small></p>
