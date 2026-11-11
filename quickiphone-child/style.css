@@ -9,25 +9,25 @@ Text Domain: quickiphone-child
 */
 
 :root{
-  --qi-yellow:#FCE94F;
+  --qi-yellow:#F4E342;
   --qi-cream:#FFF8D6;
   --qi-ink:#111111;
-  --qi-red:#E8423B;
+  --qi-red:#E00000;
   --qi-white:#FFFFFF;
   --qi-muted:#5b5b52;
   --qi-radius:20px;
   --qi-font:"DM Sans",sans-serif;
-  --qi-serif:"Playfair Display",Georgia,serif;
+  --qi-serif:"DM Serif Display",Georgia,serif;
 }
 body.qi{background:var(--qi-cream);color:var(--qi-ink);font-family:var(--qi-font);font-size:16px;line-height:1.5}
 .qi *{box-sizing:border-box}
 .qi a{color:inherit;text-decoration:none}
 .qi img{max-width:100%;display:block}
 .qi h1,.qi h2,.qi h3{font-family:var(--qi-font);font-weight:800;line-height:1.05;margin:0 0 .4em;color:var(--qi-ink)}
-.qi h1{font-size:clamp(40px,6vw,72px)}
+.qi h1{font-size:clamp(44px,6.5vw,83px);letter-spacing:-.02em}
 .qi h2{font-size:clamp(30px,4vw,48px)}
 .qi h3{font-size:20px}
-.qi em,.qi .serif{font-family:var(--qi-serif);font-style:italic;font-weight:700}
+.qi em,.qi .serif{font-family:var(--qi-serif);font-style:italic;font-weight:400}
 .qi-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
 .qi-section{padding:80px 0}
 .qi-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(0,0,0,.07);padding:6px 12px;border-radius:99px;margin-bottom:16px}
@@ -129,3 +129,124 @@ body.qi{background:var(--qi-cream);color:var(--qi-ink);font-family:var(--qi-font
   .qi-actions .qi-pill:not(.qi-pill--red){display:none}
 }
 @media(max-width:560px){.qi-grid--4{grid-template-columns:1fr}.qi-section{padding:56px 0}}
+
+/* ---- design match (Figma) ---- */
+.qi-logo{display:flex;align-items:center;gap:8px;color:inherit}
+.qi-logo .sym{height:44px;width:auto}
+.qi-logo .word{height:56px;width:auto}
+.qi-ico{width:36px;height:36px;padding:0;display:grid;place-items:center}
+.qi-lang{display:inline-flex;align-items:center;gap:6px}
+.qi-header .qi-wrap{max-width:1280px}
+.qi-hero-art{background-size:cover;background-position:center;border:8px solid rgba(255,255,255,.35);border-radius:44px}
+.qi-eyebrow--yellow{background:var(--qi-yellow);color:var(--qi-ink)}
+.qi-btn--yellow{background:var(--qi-yellow);color:var(--qi-ink)!important}
+
+/* hero slider */
+.qi-slider{position:relative;min-height:560px;overflow:hidden;background:#111}
+.qi-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .7s;display:flex;align-items:center}
+.qi-slide.on{opacity:1}
+.qi-slide::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.25))}
+.qi-slide .qi-wrap{position:relative;width:100%;color:#fff}
+.qi-slide h2{color:#fff;font-size:clamp(36px,5vw,64px);max-width:640px}
+.qi-slide p{max-width:520px;font-size:18px;margin:0 0 24px;color:#eee}
+.qi-slider-ui{position:absolute;left:0;right:0;bottom:28px;display:flex;justify-content:space-between;align-items:center;margin:0 auto}
+.qi-dots{display:flex;gap:8px}
+.qi-dots button{width:22px;height:4px;border:0;border-radius:4px;background:rgba(255,255,255,.4);cursor:pointer;padding:0}
+.qi-dots button.on{width:40px;background:var(--qi-yellow)}
+.qi-arrows{display:flex;gap:10px}
+.qi-arrows button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.3);color:#fff;cursor:pointer;font-size:16px}
+
+/* destination cards */
+a.qi-dest{display:block;padding:0;overflow:hidden;transition:transform .2s}
+a.qi-dest:hover{transform:translateY(-4px)}
+.qi-dest .img{height:208px;border-radius:0;margin:0;background-size:cover;background-position:center;position:relative}
+.qi-dest .code{position:absolute;left:12px;top:12px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:11px;font-weight:800}
+.qi-dest .body{padding:20px}
+.qi-dest .foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px}
+.qi-dest .foot small{display:block}
+.qi-dest .price{font-size:22px;display:block}
+.qi-dest .go{font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--qi-yellow);display:grid;place-items:center;font-weight:800}
+
+/* lower homepage sections */
+.qi-kicker{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6b6b5e;margin-bottom:12px}
+.qi-dark .qi-kicker,.qi-black .qi-kicker{color:var(--qi-yellow)}
+.qi-center{text-align:center}
+.qi-center .qi-lead{margin-left:auto;margin-right:auto}
+.qi-white{background:#fff}
+.qi-black{background:#000;color:#fff}
+.qi-black h2,.qi-black h3{color:#fff}
+.qi-link{font-weight:700;font-size:14px;color:var(--qi-yellow)!important}
+.qi-dark .qi-lead{color:#c9c9c0}
+.qi-how{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:20px;align-items:center}
+.qi-dcard{background:#1b1b1b;border:1px solid #333;border-radius:28px;padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.qi-dcard .n{width:34px;height:34px;border-radius:50%;border:1px solid var(--qi-yellow);color:var(--qi-yellow);display:grid;place-items:center;font-size:11px;font-weight:700;margin-bottom:auto}
+.qi-dcard h3{color:#fff;margin:24px 0 8px}
+.qi-dcard p{margin:0;font-size:13px;color:#c9c9c0}
+.qi-regions{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:28px;margin:28px 0 36px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+.qi-regions a{display:flex;align-items:center;gap:14px;padding:22px 26px}
+.qi-regions a+a{border-left:1px solid #eee}
+.qi-regions .ic{font-style:normal;width:40px;height:40px;border-radius:50%;background:var(--qi-yellow);display:grid;place-items:center;font-size:12px;font-weight:800}
+.qi-regions span{flex:1}
+.qi-regions b,.qi-regions small{display:block}
+.qi-regions small{color:#7b8882;font-size:12px}
+.qi-regions .from{font-style:normal;text-align:right}
+.qi-quote{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:34px;overflow:hidden;min-height:420px}
+.qi-quote .q{background:var(--qi-yellow);padding:48px;display:flex;flex-direction:column;justify-content:center}
+.qi-quote .q p{font-size:clamp(24px,2.6vw,34px);font-weight:700;line-height:1.2;margin:16px 0 28px}
+.qi-quote small,.qi-revcard small{display:block;color:#6b6b5e}
+.qi-quote .ph{background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end}
+.qi-quote .ph span,.qi-why .ph span{color:#fff;font-weight:700;font-size:20px;padding:28px;max-width:320px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.qi-pcards{margin:40px 0}
+.qi-pcard{background:#FFF8D6;border-radius:28px;overflow:hidden}
+.qi-pcard .ph{height:224px;background-size:cover;background-position:center;position:relative}
+.qi-pcard .ph i{position:absolute;left:14px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--qi-yellow);display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:800}
+.qi-pcard .b{padding:24px}
+.qi-pcard p{margin:0;color:var(--qi-muted);font-size:14px}
+.qi-faqwrap{max-width:860px;margin:0 auto}
+.qi-faqwrap .qi-faq-item{background:#FFF8D6}
+.qi-bcard{background:#161616;border:1px solid #2c2c2c;border-radius:24px;overflow:hidden;display:block;transition:transform .2s}
+.qi-bcard:hover{transform:translateY(-4px)}
+.qi-bcard .ph{height:192px;background-size:cover;background-position:center}
+.qi-bcard .b{padding:20px}
+.qi-bcard small{display:block;color:var(--qi-yellow);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.qi-bcard h3{font-size:18px;line-height:1.2}
+.qi-bcard p{font-size:13px;color:#b5b5ab}
+.qi-bcard span{font-size:12px;font-weight:700;color:#fff}
+.qi-reviews{background:var(--qi-yellow)}
+.qi-rev{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:center}
+.qi-rev .rate{display:flex;gap:10px;align-items:center;margin:0 0 16px}
+.qi-rev .rate b{font-size:22px}
+.qi-revcard{display:grid;grid-template-columns:1fr 1.4fr;background:#FFF8D6;border-radius:34px;overflow:hidden;min-height:340px}
+.qi-revcard .ph{background-size:cover;background-position:center}
+.qi-revcard .b{padding:40px;display:flex;flex-direction:column;justify-content:center}
+.qi-revcard p{font-size:26px;font-weight:700;line-height:1.2;margin:14px 0 22px}
+.qi-why{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.qi-why>.ph{min-height:620px;border-radius:34px;background-size:cover;background-position:center;display:flex;align-items:flex-end}
+.qi-why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.qi-why-grid>div{background:#FFF8D6;border-radius:22px;padding:22px}
+.qi-why-grid i{width:26px;height:26px;border-radius:50%;background:var(--qi-yellow);display:grid;place-items:center;font-style:normal;font-size:12px;margin-bottom:28px}
+.qi-why-grid h3{font-size:18px}
+.qi-why-grid p{margin:0;font-size:13px;color:var(--qi-muted)}
+.qi-partners span{box-shadow:0 4px 16px rgba(0,0,0,.05)}
+@media(max-width:980px){
+  .qi-how,.qi-rev,.qi-why,.qi-quote,.qi-revcard,.qi-regions{grid-template-columns:1fr}
+  .qi-regions a+a{border-left:0;border-top:1px solid #eee}
+  .qi-quote .ph,.qi-revcard .ph{min-height:260px}
+  .qi-why>.ph{min-height:380px}
+  .qi-why-grid{grid-template-columns:1fr}
+}
+
+/* footer match */
+.qi-footer{background:#000;color:#b5b5ab}
+.qi-footer .qi-logo{display:flex;padding:0}
+.qi-footer .qi-logo .word{height:64px}
+.qi-chips{display:flex;gap:8px;flex-wrap:wrap}
+.qi-chips span{border:1px solid #444;border-radius:99px;padding:6px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#ddd}
+.qi-sub input{background:#fff;color:#111;padding:14px 18px}
+.qi-sub{background:#fff;border-radius:99px;padding:5px;gap:0}
+.qi-sub input{border:0;outline:0;background:none}
+.qi-footer .qi-btn--yellow{padding:10px 20px}
+.qi-social-h{font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin:22px 0 10px}
+.qi-social{display:flex;gap:10px;margin:0}
+.qi-footer .qi-social a{width:34px;height:34px;border:1px solid #444;border-radius:50%;display:grid;place-items:center;padding:0;font-size:12px;font-weight:700;color:#ddd}
+.qi-footer .qi-social a:hover{border-color:var(--qi-yellow);color:var(--qi-yellow)}

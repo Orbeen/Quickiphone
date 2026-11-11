@@ -4,9 +4,9 @@
 	<div class="qi-wrap">
 		<div class="qi-footer-grid">
 			<div>
-				<div class="qi-logo">Quickiphone<small style="color:#fff">SCAN.ACTIVATE.GO</small></div>
+				<a class="qi-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Quickiphone"><img class="sym" src="<?php echo qi_asset( 'quickiphone-symbol.png' ); ?>" alt=""><img class="word" src="<?php echo qi_asset( 'quickiphone-wordmark.png' ); ?>" alt="Quickiphone"></a>
 				<p>Travel data, calls, and messages made simple for every journey.</p>
-				<p>190+ destinations · 24/7 assistance</p>
+				<p class="qi-chips"><span>190+ destinations</span><span>24/7 assistance</span></p>
 			</div>
 			<div>
 				<h4>Shop online</h4>
@@ -36,8 +36,9 @@
 			<div>
 				<h4>Get Special Offers to your inbox</h4>
 				<p>Travel deals, destination tips, and new plan alerts.</p>
-				<form class="qi-sub" onsubmit="return false"><input type="email" placeholder="Email address" aria-label="Email address for special offers"><button class="qi-btn qi-btn--red" type="submit">Join</button></form>
-				<p style="margin-top:16px"><a style="display:inline;margin-right:12px" href="https://www.instagram.com/">Instagram</a><a style="display:inline;margin-right:12px" href="https://www.facebook.com/">Facebook</a><a style="display:inline;margin-right:12px" href="https://x.com/">X</a><a style="display:inline" href="https://www.linkedin.com/">LinkedIn</a></p>
+				<form class="qi-sub" onsubmit="return false"><input type="email" placeholder="Email address" aria-label="Email address for special offers"><button class="qi-btn qi-btn--yellow" type="submit">Join</button></form>
+				<p class="qi-social-h">Social media</p>
+					<p class="qi-social"><a href="https://www.instagram.com/" aria-label="Instagram">IG</a><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://x.com/" aria-label="X">X</a><a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a></p>
 			</div>
 		</div>
 		<div class="qi-legal">

@@ -18,7 +18,7 @@ $dest = home_url( '/destinations/' );
 			</form>
 			<div class="qi-checks"><span>Ready in 2 minutes</span><span>Secure checkout</span><span>24/7 support</span></div>
 		</div>
-		<div class="qi-hero-art" role="img" aria-label="Turquoise coastal city, ready to explore">
+		<div class="qi-hero-art" role="img" aria-label="Turquoise coastal city, ready to explore" style="background:url('<?php echo qi_asset( 'img/hero.jpg' ); ?>') center/cover">
 			<div class="qi-badge">✓ You're connected</div>
 			<div class="qi-esim-card">
 				<small>YOUR ESIM · ACTIVE</small>
@@ -31,12 +31,27 @@ $dest = home_url( '/destinations/' );
 	</div>
 </section>
 
-<section class="qi-section">
-	<div class="qi-wrap">
-		<span class="qi-eyebrow">Made for exploring</span>
-		<h2>One signal. Every city.</h2>
-		<p class="qi-lead">Move through new streets with fast travel data, local insight, and no time wasted searching for airport Wi-Fi.</p>
-		<p><a class="qi-btn" href="<?php echo esc_url( $dest ); ?>">Find your eSIM</a></p>
+<section class="qi-slider" data-qi-slider>
+	<?php
+	$slides = array(
+		array( 'slide1', 'Traveler checking her phone at the airport', 'Made for exploring', 'One signal. Every city.', 'Move through new streets with fast travel data, local insight, and no time wasted searching for airport Wi-Fi.' ),
+		array( 'slide2', 'Traveler photographing a city', 'Ready in minutes', 'Your trip starts before you land.', 'Pick a plan, scan your QR code, and arrive already connected.' ),
+		array( 'slide3', 'Traveler walking with luggage', 'No roaming fees', 'Go further for less.', 'Clear allowances and honest pricing across 190+ destinations.' ),
+		array( 'slide4', 'Traveler using a smartphone', 'Always on', 'Stay connected across borders.', 'Regional plans keep you online on every leg of the journey.' ),
+	);
+	foreach ( $slides as $i => $s ) : ?>
+	<div class="qi-slide<?php echo 0 === $i ? ' on' : ''; ?>" style="background-image:url('<?php echo qi_asset( 'img/' . $s[0] . '.jpg' ); ?>')" role="img" aria-label="<?php echo esc_attr( $s[1] ); ?>">
+		<div class="qi-wrap">
+			<span class="qi-eyebrow qi-eyebrow--yellow"><?php echo esc_html( $s[2] ); ?></span>
+			<h2><?php echo esc_html( $s[3] ); ?></h2>
+			<p><?php echo esc_html( $s[4] ); ?></p>
+			<a class="qi-btn qi-btn--yellow" href="<?php echo esc_url( $dest ); ?>">Find your eSIM &rarr;</a>
+		</div>
+	</div>
+	<?php endforeach; ?>
+	<div class="qi-slider-ui qi-wrap">
+		<div class="qi-dots"><?php foreach ( $slides as $i => $s ) : ?><button type="button" class="<?php echo 0 === $i ? 'on' : ''; ?>" aria-label="Slide <?php echo (int) $i + 1; ?>"></button><?php endforeach; ?></div>
+		<div class="qi-arrows"><button type="button" data-dir="-1" aria-label="Previous">&larr;</button><button type="button" data-dir="1" aria-label="Next">&rarr;</button></div>
 	</div>
 </section>
 
@@ -56,65 +71,76 @@ $dest = home_url( '/destinations/' );
 			<a class="qi-btn qi-btn--light" href="<?php echo esc_url( $dest ); ?>">View all 190+ destinations</a>
 		</div>
 		<div class="qi-grid qi-grid--4">
-			<?php foreach ( qi_destinations() as $d ) : ?>
-			<article class="qi-card qi-dest">
-				<div class="img"></div>
-				<h3><?php echo esc_html( $d[0] . ' ' . $d[1] ); ?></h3>
-				<small><?php echo esc_html( $d[2] ); ?></small>
-				<p><small>FROM</small><br><span class="price"><?php echo esc_html( $d[3] ); ?></span></p>
-				<a class="qi-btn" href="<?php echo esc_url( $dest ); ?>">See plans for <?php echo esc_html( $d[1] ); ?></a>
-			</article>
+			<?php
+			$photos = array( 'Japan' => array( 'japan', 'JP' ), 'United States' => array( 'usa', 'US' ), 'Türkiye' => array( 'turkiye', 'TR' ), 'Thailand' => array( 'thailand', 'TH' ) );
+			foreach ( qi_destinations() as $d ) :
+				$p = $photos[ $d[1] ] ?? array( '', '' ); ?>
+			<a class="qi-card qi-dest" href="<?php echo esc_url( $dest ); ?>" aria-label="See plans for <?php echo esc_attr( $d[1] ); ?>">
+				<div class="img" style="background-image:url('<?php echo qi_asset( 'img/' . $p[0] . '.jpg' ); ?>')"><span class="code"><?php echo esc_html( $p[1] ); ?></span></div>
+				<div class="body">
+					<h3><?php echo esc_html( $d[1] ); ?></h3>
+					<small><?php echo esc_html( $d[2] ); ?></small>
+					<div class="foot"><span><small>FROM</small><b class="price"><?php echo esc_html( $d[3] ); ?></b></span><i class="go">&rarr;</i></div>
+				</div>
+			</a>
 			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
 
 <section class="qi-section qi-dark">
-	<div class="qi-wrap">
-		<span class="qi-eyebrow" style="background:#fff2">How it works</span>
-		<h2>Connected before you finish packing.</h2>
-		<p class="qi-lead" style="color:#cfcfc5">Choose your destination, install in a few taps, and switch on your data when you land.</p>
-		<div class="qi-grid qi-grid--3 qi-steps" style="margin:32px 0">
-			<div class="qi-card" style="background:#222"><div class="num" style="color:#111">1</div><h3>Choose a plan</h3><p>Pick a country or regional package that fits your trip.</p></div>
-			<div class="qi-card" style="background:#222"><div class="num" style="color:#111">2</div><h3>Install your eSIM</h3><p>Scan your QR code and follow the simple setup guide.</p></div>
-			<div class="qi-card" style="background:#222"><div class="num" style="color:#111">3</div><h3>Land &amp; connect</h3><p>Turn on your eSIM at your destination. You're online.</p></div>
-		</div>
-		<a class="qi-btn qi-btn--red" href="<?php echo esc_url( $dest ); ?>">Find your plan</a>
-	</div>
-</section>
-
-<section class="qi-section">
-	<div class="qi-wrap">
-		<span class="qi-eyebrow">Multi-country plans</span>
-		<h2>One eSIM. Many borders.</h2>
-		<div class="qi-grid qi-grid--3" style="margin-top:28px">
-			<a class="qi-card qi-region" href="<?php echo esc_url( $dest ); ?>"><b>🇪🇺 Europe</b>39 countries<br><small>From</small> <b>$4.90</b></a>
-			<a class="qi-card qi-region" href="<?php echo esc_url( $dest ); ?>"><b>Asia Pacific</b>18 countries<br><small>From</small> <b>$5.50</b></a>
-			<a class="qi-card qi-region" href="<?php echo esc_url( $dest ); ?>"><b>North America</b>3 countries<br><small>From</small> <b>$6.00</b></a>
-		</div>
-	</div>
-</section>
-
-<section class="qi-section" style="background:#fff">
-	<div class="qi-wrap qi-grid qi-grid--2" style="align-items:center">
+	<div class="qi-wrap qi-how">
 		<div>
-			<div class="qi-stars">★★★★★</div>
-			<p class="serif" style="font-size:26px">“Installed it at the airport, landed in Tokyo, and my maps were working before I reached baggage claim.”</p>
-			<b>Maya R.</b><br><small>Verified traveler · Japan eSIM</small>
+			<span class="qi-kicker">How it works</span>
+			<h2>Connected before you finish packing.</h2>
+			<p class="qi-lead">Choose your destination, install in a few taps, and switch on your data when you land.</p>
+			<a class="qi-btn qi-btn--yellow" href="<?php echo esc_url( $dest ); ?>">Find your plan</a>
 		</div>
-		<div class="qi-hero-art" style="aspect-ratio:16/10;background:linear-gradient(135deg,#37a6c9,#9fd6e8)"><div class="qi-badge" style="right:20px">Less time hunting for Wi-Fi. More time out there.</div></div>
+		<?php foreach ( array(
+			array( '01', 'Choose a plan', 'Pick a country or regional package that fits your trip.' ),
+			array( '02', 'Install your eSIM', 'Scan your QR code and follow the simple setup guide.' ),
+			array( '03', 'Land & connect', "Turn on your eSIM at your destination. You're online." ),
+		) as $s ) : ?>
+		<div class="qi-dcard"><span class="n"><?php echo esc_html( $s[0] ); ?></span><h3><?php echo esc_html( $s[1] ); ?></h3><p><?php echo esc_html( $s[2] ); ?></p></div>
+		<?php endforeach; ?>
 	</div>
 </section>
 
 <section class="qi-section">
 	<div class="qi-wrap">
-		<span class="qi-eyebrow">eSIM, explained</span>
-		<h2>From checkout to connected.</h2>
-		<p class="qi-lead">A simple digital setup designed around the way real people travel.</p>
-		<div class="qi-grid qi-grid--3" style="margin:28px 0">
-			<article class="qi-card"><h3>Choose your plan</h3><p>Pick a country, regional, or full-service eSIM that fits your journey.</p></article>
-			<article class="qi-card"><h3>Scan your QR code</h3><p>Install your eSIM over Wi-Fi in just a few guided steps before departure.</p></article>
-			<article class="qi-card"><h3>Land and connect</h3><p>Switch on your Quickiphone line when you arrive and start exploring.</p></article>
+		<span class="qi-kicker">Multi-country plans</span>
+		<h2>One eSIM. Many borders.</h2>
+		<div class="qi-regions">
+			<?php foreach ( array( array( 'EU', 'Europe', '39 countries', '$4.90' ), array( '🌏', 'Asia Pacific', '18 countries', '$5.50' ), array( '🌎', 'North America', '3 countries', '$6.00' ) ) as $r ) : ?>
+			<a href="<?php echo esc_url( $dest ); ?>"><i class="ic"><?php echo esc_html( $r[0] ); ?></i><span><b><?php echo esc_html( $r[1] ); ?></b><small><?php echo esc_html( $r[2] ); ?></small></span><em class="from"><small>From</small><b><?php echo esc_html( $r[3] ); ?></b></em></a>
+			<?php endforeach; ?>
+		</div>
+		<div class="qi-quote">
+			<div class="q">
+				<div class="qi-stars">★★★★★</div>
+				<p>“Installed it at the airport, landed in Tokyo, and my maps were working before I reached baggage claim.”</p>
+				<b>Maya R.</b><small>Verified traveler · Japan eSIM</small>
+			</div>
+			<div class="ph" style="background-image:url('<?php echo qi_asset( 'img/quote.jpg' ); ?>')" role="img" aria-label="Traveler's view over a calm blue sea"><span>Less time hunting for Wi-Fi. More time out there.</span></div>
+		</div>
+	</div>
+</section>
+
+<section class="qi-section qi-white">
+	<div class="qi-wrap">
+		<div class="qi-center">
+			<span class="qi-kicker">eSIM, explained</span>
+			<h2>From checkout to connected.</h2>
+			<p class="qi-lead" style="margin-inline:auto">A simple digital setup designed around the way real people travel.</p>
+		</div>
+		<div class="qi-grid qi-grid--3 qi-pcards">
+			<?php foreach ( array(
+				array( 'step1', '01', 'Choose your plan', 'Pick a country, regional, or full-service eSIM that fits your journey.' ),
+				array( 'step2', '02', 'Scan your QR code', 'Install your eSIM over Wi-Fi in just a few guided steps before departure.' ),
+				array( 'step3', '03', 'Land and connect', 'Switch on your Quickiphone line when you arrive and start exploring.' ),
+			) as $s ) : ?>
+			<article class="qi-pcard"><div class="ph" style="background-image:url('<?php echo qi_asset( 'img/' . $s[0] . '.jpg' ); ?>')"><i><?php echo esc_html( $s[1] ); ?></i></div><div class="b"><h3><?php echo esc_html( $s[2] ); ?></h3><p><?php echo esc_html( $s[3] ); ?></p></div></article>
+			<?php endforeach; ?>
 		</div>
 		<?php
 		$faq = array(
@@ -122,19 +148,21 @@ $dest = home_url( '/destinations/' );
 			array( 'When does the plan start?', 'Most plans begin when the eSIM first connects to a supported network at your destination.' ),
 			array( 'Do I need to enable data roaming?', 'Yes, enable Data Roaming only on the Quickiphone line so it can connect through partner networks.' ),
 			array( 'What if I need help?', 'Our support team is available around the clock to help with installation, activation, and connectivity.' ),
-		);
-		foreach ( $faq as $f ) : ?>
-		<div class="qi-faq-item"><button type="button"><span><?php echo esc_html( $f[0] ); ?></span><span>+</span></button><div class="a"><?php echo esc_html( $f[1] ); ?></div></div>
-		<?php endforeach; ?>
+		); ?>
+		<div class="qi-faqwrap">
+			<?php foreach ( $faq as $f ) : ?>
+			<div class="qi-faq-item"><button type="button"><span><?php echo esc_html( $f[0] ); ?></span><span>+</span></button><div class="a"><?php echo esc_html( $f[1] ); ?></div></div>
+			<?php endforeach; ?>
+		</div>
 	</div>
 </section>
 
-<section class="qi-section" style="background:#fff">
-	<div class="qi-wrap">
-		<span class="qi-eyebrow">Trusted travel ecosystem</span>
+<section class="qi-section">
+	<div class="qi-wrap qi-center">
+		<span class="qi-kicker">Trusted travel ecosystem</span>
 		<h2>Our partners at a glance.</h2>
-		<p class="qi-lead">Built for travelers moving through the world’s busiest airports and airline networks.</p>
-		<div class="qi-partners" style="margin-top:24px">
+		<p class="qi-lead" style="margin-inline:auto">Built for travelers moving through the world’s busiest airports and airline networks.</p>
+		<div class="qi-partners" style="justify-content:center;margin-top:28px">
 			<?php foreach ( array( 'Emirates', 'Qatar Airways', 'British Airways', 'Lufthansa', 'Turkish Airlines', 'Singapore Airlines', 'Air France', 'Delta' ) as $p ) : ?>
 			<span><?php echo esc_html( $p ); ?></span>
 			<?php endforeach; ?>
@@ -142,33 +170,56 @@ $dest = home_url( '/destinations/' );
 	</div>
 </section>
 
-<section class="qi-section">
+<section class="qi-section qi-black">
 	<div class="qi-wrap">
 		<div class="qi-head">
-			<div><span class="qi-eyebrow">Read our latest</span><h2>Travel better with the right signal.</h2></div>
-			<a class="qi-btn qi-btn--light" href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">Explore travel guides</a>
+			<div><span class="qi-kicker">Read our latest</span><h2>Travel better with the right signal.</h2></div>
+			<a class="qi-link" href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">Explore travel guides →</a>
 		</div>
 		<div class="qi-grid qi-grid--4">
-			<article class="qi-card"><small>eSIM guide</small><h3>Your complete 10-minute eSIM setup guide</h3><p>From checking compatibility to switching on data roaming when you land.</p></article>
-			<article class="qi-card"><small>Travel smarter</small><h3>How much mobile data does your next trip need?</h3><p>A practical breakdown for maps, messaging, social media, streaming, and work.</p></article>
-			<article class="qi-card"><small>Airport tips</small><h3>Airport Wi-Fi or travel eSIM: which is safer?</h3><p>What every traveler should know before connecting in a busy terminal.</p></article>
-			<article class="qi-card"><small>Multi-country travel</small><h3>One eSIM, five borders, zero SIM swaps</h3><p>Why regional plans make connected rail trips and multi-stop holidays easier.</p></article>
+			<?php foreach ( array(
+				array( 'blog1', 'eSIM guide', 'Your complete 10-minute eSIM setup guide', 'From checking compatibility to switching on data roaming when you land.' ),
+				array( 'blog2', 'Travel smarter', 'How much mobile data does your next trip need?', 'A practical breakdown for maps, messaging, social media, streaming, and work.' ),
+				array( 'blog3', 'Airport tips', 'Airport Wi-Fi or travel eSIM: which is safer?', 'What every traveler should know before connecting in a busy terminal.' ),
+				array( 'blog4', 'Multi-country travel', 'One eSIM, five borders, zero SIM swaps', 'Why regional plans make connected rail trips and multi-stop holidays easier.' ),
+			) as $b ) : ?>
+			<a class="qi-bcard" href="<?php echo esc_url( home_url( '/faq/' ) ); ?>"><div class="ph" style="background-image:url('<?php echo qi_asset( 'img/' . $b[0] . '.jpg' ); ?>')"></div><div class="b"><small><?php echo esc_html( $b[1] ); ?></small><h3><?php echo esc_html( $b[2] ); ?></h3><p><?php echo esc_html( $b[3] ); ?></p><span>Read article →</span></div></a>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
 
-<section class="qi-section qi-dark">
-	<div class="qi-wrap qi-grid qi-grid--2">
+<section class="qi-section qi-reviews">
+	<div class="qi-wrap qi-rev">
 		<div>
-			<span class="qi-eyebrow" style="background:#fff2">Why Quickiphone</span>
-			<h2>Your journey shapes our company.</h2>
-			<p class="qi-lead" style="color:#cfcfc5">We listen to what travelers need, value the way you want to stay connected, and build our products around it.</p>
+			<span class="qi-kicker">See what happy customers are saying</span>
+			<p class="rate"><b>4.5/5</b> <span class="qi-stars">★★★★★</span> <small>Google customer rating</small></p>
+			<h2>Real trips. Real connections.</h2>
 		</div>
-		<div class="qi-grid qi-grid--2">
-			<div><h3>Traveler-first choices</h3><p>Plans designed around real trips, not complicated telecom language.</p></div>
-			<div><h3>Transparent value</h3><p>Clear allowances, validity, coverage, and pricing before you buy.</p></div>
-			<div><h3>Human support</h3><p>Help when setup feels unfamiliar or a journey changes unexpectedly.</p></div>
-			<div><h3>Always improving</h3><p>Customer feedback directly influences the experience we build next.</p></div>
+		<div class="qi-revcard">
+			<div class="ph" style="background-image:url('<?php echo qi_asset( 'img/reviewer.jpg' ); ?>')" role="img" aria-label="Daniel and Sofia, Quickiphone customers"></div>
+			<div class="b"><div class="qi-stars">★★★★★</div><p>“My maps worked the moment I landed in Tokyo. Setup took less time than collecting my luggage.”</p><b>Maya R.</b><small>Verified traveler · Japan</small></div>
+		</div>
+	</div>
+</section>
+
+<section class="qi-section qi-white">
+	<div class="qi-wrap qi-why">
+		<div class="ph" style="background-image:url('<?php echo qi_asset( 'img/why.jpg' ); ?>')" role="img" aria-label="Traveler using a phone while exploring"><span>Built around where you want to go next.</span></div>
+		<div>
+			<span class="qi-kicker">Why Quickiphone</span>
+			<h2>Your journey shapes our company.</h2>
+			<p class="qi-lead">We listen to what travelers need, value the way you want to stay connected, and build our products around those wishes. Clear plans, honest pricing, responsive support, and practical choices guide every decision we make.</p>
+			<div class="qi-why-grid">
+				<?php foreach ( array(
+					array( 'Traveler-first choices', 'Plans designed around real trips, not complicated telecom language.' ),
+					array( 'Transparent value', 'Clear allowances, validity, coverage, and pricing before you buy.' ),
+					array( 'Human support', 'Help when setup feels unfamiliar or a journey changes unexpectedly.' ),
+					array( 'Always improving', 'Customer feedback directly influences the experience we build next.' ),
+				) as $w ) : ?>
+				<div><i>✓</i><h3><?php echo esc_html( $w[0] ); ?></h3><p><?php echo esc_html( $w[1] ); ?></p></div>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</div>
 </section>

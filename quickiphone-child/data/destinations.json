@@ -1,0 +1,594 @@
+{
+ "plans": [
+  [
+   "Short trip",
+   1,
+   7
+  ],
+  [
+   "Short trip",
+   2,
+   15
+  ],
+  [
+   "Light use",
+   3,
+   30
+  ],
+  [
+   "Light use",
+   5,
+   15
+  ],
+  [
+   "Best value",
+   5,
+   30
+  ],
+  [
+   "Best value",
+   10,
+   15
+  ],
+  [
+   "Best value",
+   10,
+   30,
+   1
+  ],
+  [
+   "Heavy use",
+   15,
+   30
+  ],
+  [
+   "Heavy use",
+   20,
+   30
+  ],
+  [
+   "Heavy use",
+   30,
+   30
+  ],
+  [
+   "Heavy use",
+   40,
+   30
+  ],
+  [
+   "Heavy use",
+   50,
+   30
+  ]
+ ],
+ "countries": [
+  {
+   "name": "Japan",
+   "code": "JP",
+   "img": "japan",
+   "net": "Primary networks: KDDI / SoftBank · 4G/5G where available",
+   "tag": "Ancient temples, neon nights, and mountain calm.",
+   "prices": [
+    3.13,
+    5.29,
+    7.02,
+    9.61,
+    11.34,
+    16.09,
+    18.9,
+    24.73,
+    29.7,
+    38.77,
+    45.9,
+    53.89
+   ]
+  },
+  {
+   "name": "United States",
+   "code": "US",
+   "img": "usa",
+   "net": "Primary networks: T-Mobile / AT&T · 4G/5G where available",
+   "tag": "Big-city energy and iconic coast-to-coast adventures.",
+   "prices": [
+    2.9,
+    4.9,
+    6.5,
+    8.9,
+    10.5,
+    14.9,
+    17.5,
+    22.9,
+    27.5,
+    35.9,
+    42.5,
+    49.9
+   ]
+  },
+  {
+   "name": "Türkiye",
+   "code": "TR",
+   "img": "turkiye",
+   "net": "Primary networks: Turkcell / Türk Telekom · 4G/5G where available",
+   "tag": "Bosphorus sunsets, grand bazaars, and timeless skylines.",
+   "prices": [
+    2.55,
+    4.31,
+    5.72,
+    7.83,
+    9.24,
+    13.11,
+    15.4,
+    20.15,
+    24.2,
+    31.59,
+    37.4,
+    43.91
+   ]
+  },
+  {
+   "name": "Thailand",
+   "code": "TH",
+   "img": "thailand",
+   "net": "Primary networks: AIS / TrueMove · 4G/5G where available",
+   "tag": "Golden temples, tropical shores, and vibrant street life.",
+   "prices": [
+    2.61,
+    4.41,
+    5.85,
+    8.01,
+    9.45,
+    13.41,
+    15.75,
+    20.61,
+    24.75,
+    32.31,
+    38.25,
+    44.91
+   ]
+  },
+  {
+   "name": "Saudi Arabia",
+   "code": "SA",
+   "img": "saudi",
+   "net": "Primary networks: STC / Mobily · 4G/5G where available",
+   "tag": "Desert heritage, historic architecture, and bold new cities.",
+   "prices": [
+    3.36,
+    5.68,
+    7.54,
+    10.32,
+    12.18,
+    17.28,
+    20.3,
+    26.56,
+    31.9,
+    41.64,
+    49.3,
+    57.88
+   ]
+  },
+  {
+   "name": "UAE",
+   "code": "AE",
+   "img": "uae",
+   "net": "Primary networks: du / Etisalat · 4G/5G where available",
+   "tag": "Futuristic skylines rising from golden desert landscapes.",
+   "prices": [
+    3.6,
+    6.08,
+    8.06,
+    11.04,
+    13.02,
+    18.48,
+    21.7,
+    28.4,
+    34.1,
+    44.52,
+    52.7,
+    61.88
+   ]
+  },
+  {
+   "name": "Oman",
+   "code": "OM",
+   "img": "saudi",
+   "net": "Primary networks: Omantel / Ooredoo · 4G/5G where available",
+   "tag": "Dramatic wadis, welcoming souqs, and Arabian coastlines.",
+   "prices": [
+    3.31,
+    5.59,
+    7.41,
+    10.15,
+    11.97,
+    16.99,
+    19.95,
+    26.11,
+    31.35,
+    40.93,
+    48.45,
+    56.89
+   ]
+  },
+  {
+   "name": "China",
+   "code": "CN",
+   "img": "china",
+   "net": "Primary networks: China Mobile / China Unicom · 4G/5G where available",
+   "tag": "Imperial history, modern megacities, and sweeping landscapes.",
+   "prices": [
+    3.13,
+    5.29,
+    7.02,
+    9.61,
+    11.34,
+    16.09,
+    18.9,
+    24.73,
+    29.7,
+    38.77,
+    45.9,
+    53.89
+   ]
+  },
+  {
+   "name": "Bosnia and Herzegovina",
+   "code": "BA",
+   "img": "bosnia",
+   "net": "Primary networks: BH Telecom / m:tel · 4G/5G where available",
+   "tag": "Stone bridges, green valleys, and layered Balkan heritage.",
+   "prices": [
+    2.61,
+    4.41,
+    5.85,
+    8.01,
+    9.45,
+    13.41,
+    15.75,
+    20.61,
+    24.75,
+    32.31,
+    38.25,
+    44.91
+   ]
+  },
+  {
+   "name": "United Kingdom",
+   "code": "GB",
+   "img": "uk",
+   "net": "Primary networks: O2 / Vodafone · 4G/5G where available",
+   "tag": "Storied streets, royal landmarks, and countryside escapes.",
+   "prices": [
+    2.78,
+    4.7,
+    6.24,
+    8.54,
+    10.08,
+    14.3,
+    16.8,
+    21.98,
+    26.4,
+    34.46,
+    40.8,
+    47.9
+   ]
+  },
+  {
+   "name": "France",
+   "code": "FR",
+   "img": "france",
+   "net": "Primary networks: Orange / SFR · 4G/5G where available",
+   "tag": "Elegant boulevards, café culture, and art at every turn.",
+   "prices": [
+    2.84,
+    4.8,
+    6.37,
+    8.72,
+    10.29,
+    14.6,
+    17.15,
+    22.44,
+    26.95,
+    35.18,
+    41.65,
+    48.9
+   ]
+  },
+  {
+   "name": "Italy",
+   "code": "IT",
+   "img": "italy",
+   "net": "Primary networks: TIM / WindTre · 4G/5G where available",
+   "tag": "Renaissance beauty, sunlit piazzas, and unforgettable food.",
+   "prices": [
+    2.73,
+    4.61,
+    6.11,
+    8.37,
+    9.87,
+    14.01,
+    16.45,
+    21.53,
+    25.85,
+    33.75,
+    39.95,
+    46.91
+   ]
+  },
+  {
+   "name": "Spain",
+   "code": "ES",
+   "img": "spain",
+   "net": "Primary networks: Movistar / Orange · 4G/5G where available",
+   "tag": "Lively plazas, expressive architecture, and Mediterranean light.",
+   "prices": [
+    2.67,
+    4.51,
+    5.98,
+    8.19,
+    9.66,
+    13.71,
+    16.1,
+    21.07,
+    25.3,
+    33.03,
+    39.1,
+    45.91
+   ]
+  },
+  {
+   "name": "Russia",
+   "code": "RU",
+   "img": "russia",
+   "net": "Primary networks: MTS / MegaFon · 4G/5G where available",
+   "tag": "Ornate landmarks, grand avenues, and immense landscapes.",
+   "prices": [
+    2.73,
+    4.61,
+    6.11,
+    8.37,
+    9.87,
+    14.01,
+    16.45,
+    21.53,
+    25.85,
+    33.75,
+    39.95,
+    46.91
+   ]
+  },
+  {
+   "name": "Germany",
+   "code": "DE",
+   "img": "germany",
+   "net": "Primary networks: Telekom / O2 · 4G/5G where available",
+   "tag": "Creative cities, storybook towns, and effortless rail journeys.",
+   "prices": [
+    3.02,
+    5.1,
+    6.76,
+    9.26,
+    10.92,
+    15.5,
+    18.2,
+    23.82,
+    28.6,
+    37.34,
+    44.2,
+    51.9
+   ]
+  },
+  {
+   "name": "Australia",
+   "code": "AU",
+   "img": "australia",
+   "net": "Primary networks: Optus / Vodafone · 4G/5G where available",
+   "tag": "Harbour icons, open roads, and extraordinary wild coastlines.",
+   "prices": [
+    3.25,
+    5.49,
+    7.28,
+    9.97,
+    11.76,
+    16.69,
+    19.6,
+    25.65,
+    30.8,
+    40.21,
+    47.6,
+    55.89
+   ]
+  },
+  {
+   "name": "Canada",
+   "code": "CA",
+   "img": "canada",
+   "net": "Primary networks: Rogers / Bell · 4G/5G where available",
+   "tag": "Lakeside cities, alpine horizons, and endless wilderness.",
+   "prices": [
+    3.42,
+    5.78,
+    7.67,
+    10.5,
+    12.39,
+    17.58,
+    20.65,
+    27.02,
+    32.45,
+    42.36,
+    50.15,
+    58.88
+   ]
+  },
+  {
+   "name": "Singapore",
+   "code": "SG",
+   "img": "singapore",
+   "net": "Primary networks: Singtel / StarHub · 4G/5G where available",
+   "tag": "Garden city calm, futuristic design, and world-class flavours.",
+   "prices": [
+    2.96,
+    5.0,
+    6.63,
+    9.08,
+    10.71,
+    15.2,
+    17.85,
+    23.36,
+    28.05,
+    36.62,
+    43.35,
+    50.9
+   ]
+  },
+  {
+   "name": "Indonesia",
+   "code": "ID",
+   "img": "indonesia",
+   "net": "Primary networks: Telkomsel / XL · 4G/5G where available",
+   "tag": "Island temples, rice terraces, and warm tropical rhythms.",
+   "prices": [
+    2.49,
+    4.21,
+    5.59,
+    7.65,
+    9.03,
+    12.81,
+    15.05,
+    19.69,
+    23.65,
+    30.87,
+    36.55,
+    42.91
+   ]
+  },
+  {
+   "name": "Mexico",
+   "code": "MX",
+   "img": "mexico",
+   "net": "Primary networks: Telcel / AT&T · 4G/5G where available",
+   "tag": "Colourful streets, ancient wonders, and generous hospitality.",
+   "prices": [
+    2.64,
+    4.46,
+    5.92,
+    8.1,
+    9.55,
+    13.56,
+    15.93,
+    20.84,
+    25.03,
+    32.67,
+    38.68,
+    45.41
+   ]
+  },
+  {
+   "name": "Brazil",
+   "code": "BR",
+   "img": "brazil",
+   "net": "Primary networks: Claro / Vivo · 4G/5G where available",
+   "tag": "Oceanfront energy, music-filled streets, and lush horizons.",
+   "prices": [
+    2.58,
+    4.36,
+    5.79,
+    7.92,
+    9.35,
+    13.26,
+    15.58,
+    20.38,
+    24.48,
+    31.95,
+    37.83,
+    44.41
+   ]
+  }
+ ],
+ "regions": [
+  {
+   "name": "Europe Explorer",
+   "code": "EU",
+   "img": "france",
+   "net": "Coverage: 40 countries · leading local networks · 4G/5G where available",
+   "tag": "One eSIM for café mornings, coastal trains, and historic capitals.",
+   "prices": [
+    3.42,
+    5.78,
+    7.67,
+    10.5,
+    12.39,
+    17.58,
+    20.65,
+    27.02,
+    32.45,
+    42.36,
+    50.15,
+    58.88
+   ]
+  },
+  {
+   "name": "Asia Discovery",
+   "code": "AS",
+   "img": "asia",
+   "net": "Coverage: 18 countries · leading local networks · 4G/5G where available",
+   "tag": "Move from neon megacities to tranquil islands without switching SIMs.",
+   "prices": [
+    3.6,
+    6.08,
+    8.06,
+    11.04,
+    13.02,
+    18.48,
+    21.7,
+    28.4,
+    34.1,
+    44.52,
+    52.7,
+    61.88
+   ]
+  },
+  {
+   "name": "Middle East Connect",
+   "code": "ME",
+   "img": "uae",
+   "net": "Coverage: 12 countries · leading local networks · 4G/5G where available",
+   "tag": "Seamless data across modern skylines, souqs, and desert roads.",
+   "prices": [
+    3.71,
+    6.27,
+    8.32,
+    11.39,
+    13.44,
+    19.07,
+    22.4,
+    29.31,
+    35.2,
+    45.95,
+    54.4,
+    63.87
+   ]
+  },
+  {
+   "name": "Global Journey",
+   "code": "GL",
+   "img": "usa",
+   "net": "Coverage: 90+ countries · partner networks · 4G/5G where available",
+   "tag": "A single travel companion for ambitious multi-continent itineraries.",
+   "prices": [
+    4.58,
+    7.74,
+    10.27,
+    14.06,
+    16.59,
+    23.54,
+    27.65,
+    36.18,
+    43.45,
+    56.72,
+    67.15,
+    78.84
+   ]
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+/* FAQ page */
+.qi-back{font-size:13px;font-weight:600;display:inline-block;margin-bottom:18px}
+.qf-hero{position:relative;background:var(--qi-yellow);padding:36px 0 72px;overflow:hidden}
+.qf-hero .qi-wrap{position:relative;z-index:1}
+.qf-hero h1{max-width:none;font-size:clamp(40px,5.6vw,72px)}
+.qf-hero h1 em{display:block}
+.qf-hero .qi-lead{margin-top:12px}
+.qf-hero .qi-search{max-width:520px;margin-top:28px}
+.qf-q{position:absolute;right:6%;top:-8%;font:400 560px/1 var(--qi-serif);font-style:italic;color:rgba(0,0,0,.07);pointer-events:none;user-select:none}
+.qf-steps{padding:28px 0 8px}
+.qf-steps .qi-grid>div{background:#FFF1AA;border-radius:24px;padding:24px}
+.qf-steps .n{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#111;color:var(--qi-yellow);font-size:11px;font-weight:800;margin-bottom:34px}
+.qf-steps h3{margin:0 0 6px}
+.qf-steps p{margin:0;color:var(--qi-muted);font-size:14px}
+.qi-topics .qi-kicker,.qf-stuck .qi-kicker{margin-bottom:10px}
+.qf-stuck{background:var(--qi-yellow);margin-top:16px}
+.qf-stuck p{margin:0 0 14px}
+.qi-faq-item{border-radius:20px}
+.qi-faq-item .t{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7b8882;margin-bottom:4px}
+.qi-dark .qi-lead{color:#c9c9c0}
+@media(max-width:980px){.qf-q{font-size:320px;right:-4%}}

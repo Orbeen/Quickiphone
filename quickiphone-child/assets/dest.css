@@ -1,0 +1,48 @@
+/* destinations page */
+.qi-dest-top{padding-top:28px;padding-bottom:20px}
+.qi-back{font-size:13px;font-weight:600;display:inline-block;margin-bottom:18px}
+.qi-seg{display:flex;width:min(560px,100%);margin:0 auto 22px;background:#FFF8D6;border-radius:99px;padding:6px}
+.qi-seg button{flex:1;border:0;background:none;border-radius:99px;padding:14px;font:700 14px var(--qi-font);cursor:pointer;color:var(--qi-ink)}
+.qi-seg button.on{background:var(--qi-ink);color:#fff}
+.qi-tiles{display:grid;gap:12px;grid-template-columns:repeat(8,1fr)}
+.qi-tiles--4{grid-template-columns:repeat(4,1fr)}
+.qi-tile{position:relative;height:96px;border:2px solid transparent;border-radius:16px;background:#ccc center/cover;cursor:pointer;color:#fff;text-align:left;padding:0;overflow:hidden;font-family:var(--qi-font)}
+.qi-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.75))}
+.qi-tile i{position:absolute;left:8px;top:8px;z-index:1;font-style:normal;font-size:9px;font-weight:800;background:var(--qi-yellow);color:#111;border-radius:6px;padding:2px 5px}
+.qi-tile span{position:absolute;left:10px;bottom:8px;z-index:1;font-size:12px;font-weight:700}
+.qi-tile.on{border-color:var(--qi-ink);box-shadow:0 0 0 2px var(--qi-yellow)}
+.qi-dhero{background:#222 center/cover;color:#fff;margin:0 24px;border-radius:36px;min-height:440px;display:flex;align-items:flex-end}
+@media(min-width:1280px){.qi-dhero{max-width:1232px;margin:0 auto}}
+.qi-dhero-in{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;width:100%;padding-top:48px;padding-bottom:40px}
+.qi-dhero h1{color:#fff;font-size:clamp(40px,5.5vw,68px)}
+.qi-dhero .tag{font-size:20px;max-width:480px;margin:0 0 14px}
+.qi-dhero .sub{max-width:480px;color:#ddd;margin:0}
+.qi-pick{background:rgba(255,255,255,.95);border-radius:22px;padding:12px;color:#111}
+.qi-pick label{display:block;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45);padding:4px 12px 0}
+.qi-pick>div{display:flex;align-items:center;gap:10px;padding:4px 0 0 12px}
+.qi-pick .code{width:40px;height:40px;border-radius:50%;background:#000;color:var(--qi-yellow);display:grid;place-items:center;font-size:12px;font-weight:800;flex:none}
+.qi-pick select{flex:1;border:0;background:none;font:800 18px var(--qi-font);padding:14px 8px;outline:0;cursor:pointer;color:#111}
+.qi-plans h2{margin-bottom:6px}
+.qi-chipsbar{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.qi-chipsbar button{border:0;background:#fff;border-radius:99px;padding:10px 18px;font:700 13px var(--qi-font);cursor:pointer}
+.qi-chipsbar button.on{background:var(--qi-ink);color:#fff}
+.qi-plangrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.qi-plan2{position:relative;background:#fff;border-radius:24px;padding:22px;box-shadow:0 6px 24px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:2px}
+.qi-plan2.hot{border:2px solid var(--qi-ink)}
+.qi-plan2 em{position:absolute;right:16px;top:16px;background:var(--qi-yellow);font-style:normal;font-size:10px;font-weight:800;padding:4px 9px;border-radius:99px;text-transform:uppercase}
+.qi-plan2>small{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7b8882}
+.qi-plan2 .gb{font-size:34px;font-weight:800;line-height:1.1}
+.qi-plan2 .spd{font-size:12px;color:#7b8882;margin-bottom:12px}
+.qi-plan2 .days strong{font-size:26px;margin-right:6px}
+.qi-plan2 .days span{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b8882}
+.qi-plan2 .lbl{margin-top:14px}
+.qi-plan2 .price{font-size:26px;margin-bottom:14px}
+.qi-plan2 .qi-btn{justify-content:center}
+.qi-incl i{width:30px;height:30px;border-radius:50%;background:var(--qi-yellow);display:grid;place-items:center;font-style:normal;margin-bottom:14px}
+.qi-incl p{color:var(--qi-muted);font-size:14px}
+@media(max-width:980px){
+  .qi-tiles,.qi-tiles--4{grid-template-columns:repeat(4,1fr)}
+  .qi-dhero-in{grid-template-columns:1fr}
+  .qi-plangrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){.qi-tiles,.qi-tiles--4{grid-template-columns:repeat(2,1fr)}.qi-plangrid{grid-template-columns:1fr}.qi-dhero{margin:0 12px}}

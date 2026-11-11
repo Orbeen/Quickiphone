@@ -60,15 +60,22 @@ $faqs = array(
 $total = 0;
 foreach ( $faqs as $list ) { $total += count( $list ); }
 ?>
-<section class="qi-hero">
+<section class="qf-hero">
 	<div class="qi-wrap">
-		<div>
-			<span class="qi-eyebrow">eSIM help center</span>
-			<h1>Questions, answered. <em>Travel with confidence.</em></h1>
-			<p class="qi-lead">Everything you need to choose, install, activate, and troubleshoot your Quickiphone travel eSIM.</p>
-			<div class="qi-search"><input type="text" data-qi-faq-search placeholder="Search eSIM questions" aria-label="Search frequently asked questions"></div>
-		</div>
-		<div class="qi-hero-art" style="background:linear-gradient(135deg,#111,#e8423b)"><div class="qi-badge">Check · Install · Connect</div></div>
+		<a class="qi-back" href="<?php echo esc_url( home_url( '/' ) ); ?>">&larr; Back to home</a>
+		<span class="qi-kicker">eSIM help center</span>
+		<h1>Questions, answered. <em>Travel with confidence.</em></h1>
+		<p class="qi-lead">Everything you need to choose, install, activate, and troubleshoot your Quickiphone travel eSIM.</p>
+		<div class="qi-search"><input type="text" data-qi-faq-search placeholder="Search eSIM questions" aria-label="Search frequently asked questions"></div>
+	</div>
+	<span class="qf-q" aria-hidden="true">?</span>
+</section>
+
+<section class="qf-steps">
+	<div class="qi-wrap qi-grid qi-grid--3">
+		<div><span class="n">01</span><h3>Check compatibility</h3><p>Confirm your device supports eSIM and is carrier-unlocked.</p></div>
+		<div><span class="n">02</span><h3>Install before travel</h3><p>Add the eSIM over Wi-Fi and keep it turned off until arrival.</p></div>
+		<div><span class="n">03</span><h3>Connect on arrival</h3><p>Enable the travel line, mobile data, and Data Roaming.</p></div>
 	</div>
 </section>
 
@@ -76,12 +83,12 @@ foreach ( $faqs as $list ) { $total += count( $list ); }
 	<div class="qi-wrap qi-faq-layout">
 		<aside>
 			<div class="qi-card qi-topics">
-				<b>Browse by topic</b>
+				<small class="qi-kicker">Browse by topic</small>
 				<button class="on" type="button">All topics</button>
 				<?php foreach ( array_keys( $faqs ) as $t ) : ?><button type="button"><?php echo esc_html( $t ); ?></button><?php endforeach; ?>
 			</div>
-			<div class="qi-card" style="margin-top:16px;background:var(--qi-yellow)">
-				<b>Still stuck?</b>
+			<div class="qi-card qf-stuck">
+				<small class="qi-kicker">Still stuck?</small>
 				<p>Our support team is available around the clock.</p>
 				<a class="qi-btn" href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Contact Support</a>
 			</div>
@@ -90,7 +97,7 @@ foreach ( $faqs as $list ) { $total += count( $list ); }
 			<p><b><?php echo esc_html( $total ); ?> answers</b></p>
 			<?php foreach ( $faqs as $topic => $list ) : foreach ( $list as $f ) : ?>
 			<div class="qi-faq-item" data-topic="<?php echo esc_attr( $topic ); ?>">
-				<button type="button"><span><?php echo esc_html( $f[0] ); ?> <small style="color:#888;font-weight:600">· <?php echo esc_html( $topic ); ?></small></span><span>+</span></button>
+				<button type="button"><span><small class="t"><?php echo esc_html( $topic ); ?></small><?php echo esc_html( $f[0] ); ?></span><span>+</span></button>
 				<div class="a"><?php echo esc_html( $f[1] ); ?></div>
 			</div>
 			<?php endforeach; endforeach; ?>
@@ -100,10 +107,10 @@ foreach ( $faqs as $list ) { $total += count( $list ); }
 
 <section class="qi-section qi-dark">
 	<div class="qi-wrap">
-		<span class="qi-eyebrow" style="background:#fff2">Need a human?</span>
+		<span class="qi-kicker">Need a human?</span>
 		<h2>We’ll help you get connected.</h2>
 		<p class="qi-lead" style="color:#cfcfc5">Email support@quickiphone.com or submit a support ticket.</p>
-		<a class="qi-btn qi-btn--red" href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Contact Support</a>
+		<a class="qi-btn qi-btn--yellow" href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Contact Support</a>
 	</div>
 </section>
 <?php get_footer(); ?>
