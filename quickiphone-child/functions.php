@@ -23,7 +23,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	if ( is_page_template( 'template-support.php' ) ) {
 		wp_enqueue_style( 'qi-support', get_stylesheet_directory_uri() . '/assets/support.css', array( 'qi-child' ), filemtime( get_stylesheet_directory() . '/assets/support.css' ) );
 	}
-	if ( is_page_template( array( 'template-legal.php', 'template-cart.php', 'template-account.php' ) ) ) {
+	if ( is_page_template( array( 'template-legal.php', 'template-woo.php' ) ) ) {
 		wp_enqueue_style( 'qi-pages', get_stylesheet_directory_uri() . '/assets/pages.css', array( 'qi-child' ), filemtime( get_stylesheet_directory() . '/assets/pages.css' ) );
 	}
 }, 20 );
@@ -68,3 +68,8 @@ function qi_destinations() {
 		array( '🇹🇭', 'Thailand', '1 GB – Unlimited · 4G/5G', '$3.90' ),
 	);
 }
+
+/* Send "Return to shop" to the destinations page. */
+add_filter( 'woocommerce_return_to_shop_redirect', function () {
+	return home_url( '/destinations/' );
+} );

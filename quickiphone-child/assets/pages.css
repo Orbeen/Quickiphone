@@ -32,3 +32,19 @@
 .qp-login input[type=submit]{width:100%;background:#111;color:#fff;border:0;border-radius:99px;padding:14px;font:700 15px var(--qi-font);cursor:pointer}
 .qp-login .note{font-size:12px;text-align:center;color:#7b8882;margin-top:14px}
 @media(max-width:980px){.qp-legal,.qp-login{grid-template-columns:1fr}.qp-toc{position:static}.qp-body{padding:24px}}
+
+/* WooCommerce pages */
+.qp-shop{background:#fff;border-radius:30px;padding:32px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+.qp-shop .woocommerce-message,.qp-shop .woocommerce-info{background:#FFF8D6;border-top:3px solid var(--qi-yellow);border-radius:12px;padding:16px 20px;list-style:none}
+.qp-shop .woocommerce-error{background:#fde8e8;border-radius:12px;padding:16px 20px;list-style:none}
+.qp-shop a.button,.qp-shop button.button,.qp-shop .button,.qp-shop #place_order,.qp-shop input[type=submit]{background:#111;color:#fff!important;border:0;border-radius:99px;padding:14px 24px;font:700 15px var(--qi-font);cursor:pointer}
+.qp-shop .checkout-button,.qp-shop #place_order{background:var(--qi-yellow);color:#111!important}
+.qp-shop input.input-text,.qp-shop select,.qp-shop textarea{background:#FFF8D6;border:1px solid #e0d48a;border-radius:12px;padding:12px;font-family:var(--qi-font)}
+.qp-shop table.shop_table{border:0;border-collapse:collapse;width:100%}
+.qp-shop table.shop_table th,.qp-shop table.shop_table td{border-bottom:1px solid #eee;padding:14px 8px}
+.qp-shop .woocommerce-MyAccount-navigation ul{list-style:none;padding:0;margin:0 0 20px}
+.qp-shop .woocommerce-MyAccount-navigation li a{display:block;padding:10px 14px;border-radius:10px;font-weight:600}
+.qp-shop .woocommerce-MyAccount-navigation li.is-active a{background:var(--qi-yellow)}
+.qp-shop h2{font-size:24px}
+.qp-shop .woocommerce-info,.qp-shop .woocommerce-message{color:#111}
+.qp-shop .woocommerce-info::before,.qp-shop .woocommerce-message::before{color:#111}
