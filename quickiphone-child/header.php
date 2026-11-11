@@ -9,7 +9,7 @@
 <?php wp_body_open(); ?>
 <header class="qi-header">
 	<div class="qi-wrap">
-		<a class="qi-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Quickiphone"><img class="sym" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/quickiphone-symbol.png' ); ?>" alt=""><img class="word" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/quickiphone-wordmark.png' ); ?>" alt="Quickiphone"></a>
+		<a class="qi-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Quickiphone"><img class="sym" width="32" height="44" fetchpriority="high" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/quickiphone-symbol.png' ); ?>" alt=""><img class="word" width="150" height="56" fetchpriority="high" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/quickiphone-wordmark.png' ); ?>" alt="Quickiphone"></a>
 		<button class="qi-burger" aria-label="Toggle navigation" data-qi-burger>☰</button>
 		<nav class="qi-nav" data-qi-nav>
 			<a href="<?php echo esc_url( home_url( '/destinations/' ) ); ?>">Destinations</a>
@@ -24,11 +24,16 @@
 			<a href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Support</a>
 		</nav>
 		<div class="qi-actions">
+			<form class="qi-hsearch" action="<?php echo esc_url( home_url( '/destinations/' ) ); ?>" method="get" role="search">
+				<input type="search" name="q" list="qi-countries" placeholder="Search destinations" aria-label="Search destinations" autocomplete="off">
+				<button type="submit" aria-label="Search">&#128269;</button>
+			</form>
 			<a class="qi-pill qi-pill--red" href="<?php echo esc_url( home_url( '/destinations/' ) ); ?>">Top up</a>
-			<a class="qi-pill qi-ico" href="<?php echo esc_url( home_url( '/cart/' ) ); ?>" aria-label="Cart">&#128722;</a>
 			<a class="qi-pill" href="<?php echo esc_url( home_url( '/account/' ) ); ?>">&#128100; My account</a>
-				<span class="qi-pill qi-lang"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/flags/us.svg' ); ?>" alt="" width="22" height="16"> &#8964;</span>
+			<span class="qi-pill qi-lang" title="Prices are shown in US dollars"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/flags/us.svg' ); ?>" alt="" width="22" height="16"> USD</span>
+			<a class="qi-pill qi-ico qi-cart" href="<?php echo esc_url( home_url( '/cart/' ) ); ?>" aria-label="Cart">&#128722;<?php echo qi_cart_badge(); ?></a>
 		</div>
+		<?php echo qi_country_datalist(); ?>
 	</div>
 </header>
 <main>

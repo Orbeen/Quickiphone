@@ -36,3 +36,11 @@
   .qs-mail{margin:0}
   .qs-form .qi-form{grid-template-columns:1fr}
 }
+
+/* eSIM compatibility checker */
+.qs-compat{max-width:720px;margin:0 auto;text-align:center}
+.qs-compat input{width:100%;padding:16px;border:1px solid #e0d48a;background:#FFF8D6;border-radius:14px;font:500 16px var(--qi-font)}
+.qs-compat .res{margin-top:16px;padding:16px;border-radius:14px;font-weight:600;display:none}
+.qs-compat .res.yes{display:block;background:#dff5df}
+.qs-compat .res.no{display:block;background:#fde8e8}
+.qs-compat small{display:block;margin-top:12px;color:#6b6b5e}

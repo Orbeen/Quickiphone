@@ -32,11 +32,12 @@
 				<a href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Our Awards</a>
 				<a href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Partner With Us</a>
 				<a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">FAQ's</a>
+				<a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">About Us</a>
 			</div>
 			<div>
 				<h4>Get Special Offers to your inbox</h4>
 				<p>Travel deals, destination tips, and new plan alerts.</p>
-				<form class="qi-sub" onsubmit="return false"><input type="email" placeholder="Email address" aria-label="Email address for special offers"><button class="qi-btn qi-btn--yellow" type="submit">Join</button></form>
+				<form class="qi-sub" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>"><input type="hidden" name="action" value="qi_news"><?php wp_nonce_field( 'qi_news', 'qi_nonce' ); ?><input type="email" name="email" required placeholder="Email address" aria-label="Email address for special offers"><button class="qi-btn qi-btn--yellow" type="submit">Join</button></form>
 				<p class="qi-social-h">Social media</p>
 					<p class="qi-social"><a href="https://www.instagram.com/" aria-label="Instagram">IG</a><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://x.com/" aria-label="X">X</a><a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a></p>
 			</div>

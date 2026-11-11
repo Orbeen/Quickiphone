@@ -68,4 +68,22 @@ get_header();
 		</aside>
 	</div>
 </section>
+<section class="qi-section qi-white">
+	<div class="qi-wrap qs-compat">
+		<span class="qi-kicker">Before you buy</span>
+		<h2>Is my phone eSIM compatible?</h2>
+		<p>Type your phone model, for example "iPhone 15" or "Pixel 8".</p>
+		<input type="text" id="qi-compat" list="qi-devices" placeholder="Your phone model" aria-label="Phone model" autocomplete="off">
+		<datalist id="qi-devices"><option value="iPhone XR"><option value="iPhone 11"><option value="iPhone 12"><option value="iPhone 13"><option value="iPhone 14"><option value="iPhone 15"><option value="iPhone 16"><option value="Pixel 4"><option value="Pixel 6"><option value="Pixel 7"><option value="Pixel 8"><option value="Pixel 9"><option value="Galaxy S20"><option value="Galaxy S21"><option value="Galaxy S22"><option value="Galaxy S23"><option value="Galaxy S24"><option value="Galaxy Z Flip"><option value="Galaxy Z Fold"></datalist>
+		<div class="res" id="qi-compat-res" role="status"></div>
+		<small>Check yours on the phone: dial *#06# &ndash; if an EID number appears, your phone supports eSIM. Carrier-locked phones may still need unlocking.</small>
+	</div>
+</section>
+<script>
+(function(){var i=document.getElementById('qi-compat'),r=document.getElementById('qi-compat-res');
+var ok=[/iphone\s*(xs|xr|1[1-9]|se\s*(2|3|\(2|\(3))/i,/pixel\s*([3-9]|1\d)/i,/galaxy\s*(s2\d|z\s*(flip|fold)|note\s*20)/i,/ipad/i];
+i.addEventListener('input',function(){var v=i.value.trim();if(v.length<4){r.className='res';return;}
+var y=ok.some(function(x){return x.test(v)});r.className='res '+(y?'yes':'no');
+r.textContent=y?'Good news: '+v+' supports eSIM.':'We could not confirm eSIM support for "'+v+'". Dial *#06# on your phone or contact support.';});})();
+</script>
 <?php get_footer(); ?>

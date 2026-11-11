@@ -13,7 +13,7 @@ $dest = home_url( '/destinations/' );
 			<h1>See the world. <em>Stay connected with Quickiphone eSIM.</em></h1>
 			<p class="qi-lead">Affordable eSIM data for every trip. No roaming fees, no plastic SIMs, no surprises.</p>
 			<form class="qi-search" action="<?php echo esc_url( $dest ); ?>" method="get">
-				<input type="text" name="q" placeholder="Where are you traveling?" aria-label="Search destinations">
+				<input type="text" name="q" list="qi-countries" autocomplete="off" placeholder="Where are you traveling?" aria-label="Search destinations">
 				<button type="submit" aria-label="Search">→</button>
 			</form>
 			<div class="qi-checks"><span>Ready in 2 minutes</span><span>Secure checkout</span><span>24/7 support</span></div>
@@ -114,14 +114,6 @@ $dest = home_url( '/destinations/' );
 			<?php foreach ( array( array( 'EU', 'Europe', '39 countries', '$4.90' ), array( '🌏', 'Asia Pacific', '18 countries', '$5.50' ), array( '🌎', 'North America', '3 countries', '$6.00' ) ) as $r ) : ?>
 			<a href="<?php echo esc_url( $dest ); ?>"><i class="ic"><?php echo esc_html( $r[0] ); ?></i><span><b><?php echo esc_html( $r[1] ); ?></b><small><?php echo esc_html( $r[2] ); ?></small></span><em class="from"><small>From</small><b><?php echo esc_html( $r[3] ); ?></b></em></a>
 			<?php endforeach; ?>
-		</div>
-		<div class="qi-quote">
-			<div class="q">
-				<div class="qi-stars">★★★★★</div>
-				<p>“Installed it at the airport, landed in Tokyo, and my maps were working before I reached baggage claim.”</p>
-				<b>Maya R.</b><small>Verified traveler · Japan eSIM</small>
-			</div>
-			<div class="ph" style="background-image:url('<?php echo qi_asset( 'img/quote.jpg' ); ?>')" role="img" aria-label="Traveler's view over a calm blue sea"><span>Less time hunting for Wi-Fi. More time out there.</span></div>
 		</div>
 	</div>
 </section>

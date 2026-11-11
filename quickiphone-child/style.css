@@ -251,3 +251,15 @@ a.qi-dest:hover{transform:translateY(-4px)}
 .qi-social{display:flex;gap:10px;margin:0}
 .qi-footer .qi-social a{width:34px;height:34px;border:1px solid #444;border-radius:50%;display:grid;place-items:center;padding:0;font-size:12px;font-weight:700;color:#ddd}
 .qi-footer .qi-social a:hover{border-color:var(--qi-yellow);color:var(--qi-yellow)}
+
+/* Header search, cart badge, product how-to */
+.qi-hsearch{display:flex;align-items:center;background:#fff;border-radius:99px;padding:2px 2px 2px 12px;border:1px solid rgba(0,0,0,.1)}
+.qi-hsearch input{border:0;background:none;outline:0;width:130px;font:500 13px var(--qi-font);padding:7px 4px}
+.qi-hsearch button{border:0;background:none;cursor:pointer;font-size:14px;padding:6px 8px}
+.qi-cart{position:relative}
+.qi-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 5px;border-radius:99px;background:var(--qi-red);color:#fff;font:700 11px/18px var(--qi-font);text-align:center}
+.qi-badge[hidden]{display:none}
+.qi-howto{max-width:900px;margin:40px auto;padding:28px;background:#FFF8D6;border-radius:24px}
+.qi-howto ol{margin:0;padding-left:20px}
+.qi-howto li{margin:8px 0}
+@media(max-width:980px){.qi-hsearch{display:none}}

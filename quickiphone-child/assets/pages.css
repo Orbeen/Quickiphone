@@ -48,3 +48,7 @@
 .qp-shop h2{font-size:24px}
 .qp-shop .woocommerce-info,.qp-shop .woocommerce-message{color:#111}
 .qp-shop .woocommerce-info::before,.qp-shop .woocommerce-message::before{color:#111}
+
+/* Cart: clear, prominent checkout button and visible product images */
+.qp-shop .wc-proceed-to-checkout .checkout-button{display:block;width:100%;text-align:center;font-size:18px;padding:18px 28px!important;background:var(--qi-yellow)!important;color:#111!important;border:2px solid #111;border-radius:99px}
+.qp-shop table.cart img{width:64px;height:auto;border-radius:12px;background:var(--qi-yellow);padding:6px}
