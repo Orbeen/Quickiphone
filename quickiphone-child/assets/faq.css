@@ -1,6 +1,6 @@
 /* FAQ page */
 .qi-back{font-size:13px;font-weight:600;display:inline-block;margin-bottom:18px}
-.qf-hero{position:relative;background:var(--qi-yellow);padding:36px 0 72px;overflow:hidden}
+.qf-hero{position:relative;background:var(--qi-yellow);padding:60px 0 120px;overflow:hidden}
 .qf-hero .qi-wrap{position:relative;z-index:1}
 .qf-hero h1{max-width:none;font-size:clamp(40px,5.6vw,72px)}
 .qf-hero h1 em{display:block}
@@ -13,7 +13,9 @@
 .qf-steps h3{margin:0 0 6px}
 .qf-steps p{margin:0;color:var(--qi-muted);font-size:14px}
 .qi-topics .qi-kicker,.qf-stuck .qi-kicker{margin-bottom:10px}
-.qf-stuck{background:var(--qi-yellow);margin-top:16px}
+.qf-stuck{background:var(--qi-yellow);margin-top:16px;padding:44px 0}
+.qf-stuck h2,.qi-dark h2{font-size:clamp(26px,3vw,36px)}
+.qi-dark.qi-section{padding:44px 0;background:#000}
 .qf-stuck p{margin:0 0 14px}
 .qi-faq-item{border-radius:20px}
 .qi-faq-item .t{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7b8882;margin-bottom:4px}

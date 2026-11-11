@@ -1,8 +1,8 @@
 /* QuickComplete page */
 .qi-back--light{color:#ddd}
-.qc-hero{background:#000;color:#fff;padding:36px 0 64px;margin:0}
+.qc-hero{background:#000;color:#fff;padding:76px 0 130px;margin:0}
 .qc-hero-in{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
-.qc-hero h1{color:#fff;font-size:clamp(40px,5.2vw,64px)}
+.qc-hero h1{color:#fff;font-size:clamp(40px,5vw,72px)}
 .qc-hero h1 em{display:block;color:var(--qi-yellow)}
 .qc-hero .lead{max-width:460px;color:#c9c9c0;font-size:17px}
 .qc-glass{background:linear-gradient(135deg,#232323,#111);border:1px solid #333;border-radius:32px;padding:26px;box-shadow:0 30px 80px rgba(224,0,0,.18)}
@@ -40,7 +40,9 @@
 .qc-card .plan.hot .qi-btn{background:#111;color:#fff!important}
 .qc-card .foot{text-align:center;font-weight:600;font-size:13px;margin:8px 0 0}
 .qc-card .foot small{color:#7b8882;font-weight:400}
-.qc-setup{background:var(--qi-yellow);padding:56px 0}
+.qc-setup{background:var(--qi-yellow);padding:40px 0}
+.qc-setup h2{font-size:clamp(26px,3vw,36px)}
+.qc-card .b{padding:28px}
 .qc-setup .qi-grid{margin-top:24px}
 .qc-setup .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#111;color:var(--qi-yellow);font-size:11px;font-weight:800;margin-bottom:12px}
 .qc-setup p{margin:0}

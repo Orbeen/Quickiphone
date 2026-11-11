@@ -18,6 +18,7 @@ $data['cart']    = home_url( '/cart/' );
 $data['ids']     = get_option( 'qi_product_map', array() );
 $data['start']   = $q;
 ?>
+<div class="qi-dband">
 <div class="qi-wrap qi-dest-top">
 	<a class="qi-back" href="<?php echo esc_url( home_url( '/' ) ); ?>">&larr; Back to home</a>
 	<div class="qi-seg" role="tablist"><button type="button" class="on" data-mode="countries">Popular Countries</button><button type="button" data-mode="regions">Multiple Countries</button></div>
@@ -38,6 +39,7 @@ $data['start']   = $q;
 		</div>
 	</div>
 </section>
+</div>
 
 <section class="qi-section qi-plans">
 	<div class="qi-wrap">

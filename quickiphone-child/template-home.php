@@ -34,8 +34,8 @@ $dest = home_url( '/destinations/' );
 <section class="qi-slider" data-qi-slider>
 	<?php
 	$slides = array(
+		array( 'slide2', 'Traveler photographing a city', 'Arrive connected', 'Your trip starts before you land.', 'Install your Quickiphone eSIM before takeoff and step into your destination ready for maps, messages, and every next move.' ),
 		array( 'slide1', 'Traveler checking her phone at the airport', 'Made for exploring', 'One signal. Every city.', 'Move through new streets with fast travel data, local insight, and no time wasted searching for airport Wi-Fi.' ),
-		array( 'slide2', 'Traveler photographing a city', 'Ready in minutes', 'Your trip starts before you land.', 'Pick a plan, scan your QR code, and arrive already connected.' ),
 		array( 'slide3', 'Traveler walking with luggage', 'No roaming fees', 'Go further for less.', 'Clear allowances and honest pricing across 190+ destinations.' ),
 		array( 'slide4', 'Traveler using a smartphone', 'Always on', 'Stay connected across borders.', 'Regional plans keep you online on every leg of the journey.' ),
 	);
