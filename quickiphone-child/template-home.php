@@ -75,7 +75,7 @@ $dest = home_url( '/destinations/' );
 			$photos = array( 'Japan' => array( 'japan', 'JP' ), 'United States' => array( 'usa', 'US' ), 'Türkiye' => array( 'turkiye', 'TR' ), 'Thailand' => array( 'thailand', 'TH' ) );
 			foreach ( qi_destinations() as $d ) :
 				$p = $photos[ $d[1] ] ?? array( '', '' ); ?>
-			<a class="qi-card qi-dest" href="<?php echo esc_url( $dest ); ?>" aria-label="See plans for <?php echo esc_attr( $d[1] ); ?>">
+			<a class="qi-card qi-dest" href="<?php echo esc_url( add_query_arg( 'q', $d[1], $dest ) ); ?>" aria-label="See plans for <?php echo esc_attr( $d[1] ); ?>">
 				<div class="img" style="background-image:url('<?php echo qi_asset( 'img/' . $p[0] . '.jpg' ); ?>')"><span class="code"><?php echo esc_html( $p[1] ); ?></span></div>
 				<div class="body">
 					<h3><?php echo esc_html( $d[1] ); ?></h3>
@@ -111,8 +111,8 @@ $dest = home_url( '/destinations/' );
 		<span class="qi-kicker">Multi-country plans</span>
 		<h2>One eSIM. Many borders.</h2>
 		<div class="qi-regions">
-			<?php foreach ( array( array( 'EU', 'Europe', '39 countries', '$4.90' ), array( '🌏', 'Asia Pacific', '18 countries', '$5.50' ), array( '🌎', 'North America', '3 countries', '$6.00' ) ) as $r ) : ?>
-			<a href="<?php echo esc_url( $dest ); ?>"><i class="ic"><?php echo esc_html( $r[0] ); ?></i><span><b><?php echo esc_html( $r[1] ); ?></b><small><?php echo esc_html( $r[2] ); ?></small></span><em class="from"><small>From</small><b><?php echo esc_html( $r[3] ); ?></b></em></a>
+			<?php foreach ( array( array( 'EU', 'Europe', '39 countries', '$4.90', 'Europe Explorer' ), array( '🌏', 'Asia Pacific', '18 countries', '$5.50', 'Asia Discovery' ), array( '🌎', 'North America', '3 countries', '$6.00', 'Global Journey' ) ) as $r ) : ?>
+			<a href="<?php echo esc_url( add_query_arg( 'q', $r[4], $dest ) ); ?>"><i class="ic"><?php echo esc_html( $r[0] ); ?></i><span><b><?php echo esc_html( $r[1] ); ?></b><small><?php echo esc_html( $r[2] ); ?></small></span><em class="from"><small>From</small><b><?php echo esc_html( $r[3] ); ?></b></em></a>
 			<?php endforeach; ?>
 		</div>
 	</div>

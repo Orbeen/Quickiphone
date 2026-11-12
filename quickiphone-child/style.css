@@ -263,3 +263,14 @@ a.qi-dest:hover{transform:translateY(-4px)}
 .qi-howto ol{margin:0;padding-left:20px}
 .qi-howto li{margin:8px 0}
 @media(max-width:980px){.qi-hsearch{display:none}}
+
+/* Mobile header: cart visible, burger at far right; footer columns never overflow */
+@media(max-width:980px){
+  .qi-logo{order:1}
+  .qi-actions{order:2;margin-left:auto}
+  .qi-burger{order:3}
+  .qi-actions .qi-pill.qi-cart{display:inline-flex}
+}
+.qi-footer-grid>*{min-width:0}
+.qi-footer a,.qi-footer p{overflow-wrap:anywhere}
+@media(max-width:560px){.qi-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.qi-footer-grid>:first-child,.qi-footer-grid>:last-child{grid-column:1/-1}.qi-legal nav{flex-wrap:wrap}}

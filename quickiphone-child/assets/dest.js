@@ -76,6 +76,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   var start = (D.start || '').toLowerCase();
-  cur = D.countries.filter(function (c) { return start && c.name.toLowerCase().indexOf(start) > -1; })[0] || D.countries[0];
+  var hit = function (c) { return start && c.name.toLowerCase().indexOf(start) > -1; };
+  cur = D.countries.filter(hit)[0];
+  if (!cur) {
+    cur = D.regions.filter(hit)[0];
+    if (cur) {
+      mode = 'regions';
+      $$('.qi-seg button').forEach(function (x) { x.classList.toggle('on', x.getAttribute('data-mode') === 'regions'); });
+    }
+  }
+  cur = cur || D.countries[0];
   render();
 });
